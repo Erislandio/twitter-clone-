@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const PORT = 3001;
 const app = express();
 
@@ -14,7 +15,8 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 app.use(require("./router"));
+app.use(cors());
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`server online ${PORT} ;-)`);
 });
